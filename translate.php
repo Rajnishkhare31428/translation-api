@@ -1,6 +1,9 @@
 <?php
-    $apiConfig = 'config\api-configuration.json';
-    $translationConfig = 'config\api-configuration.json';
+    $apiConfigFile = 'config\api-configuration.json';
+    $translationConfigFile = 'config\translation-configuration.json';
     
-    var_dump(file_get_contents($apiConfig));
-    var_dump(file_get_contents($translationConfig));
+    $apiConfig = json_decode(file_get_contents($apiConfigFile));
+    $translationConfig = json_decode(file_get_contents($translationConfigFile));
+
+    var_dump((array)$apiConfig);
+    var_dump((array)$translationConfig);
